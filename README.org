@@ -1,0 +1,19 @@
+** markelf
+Alter an ELF file's ABI compatibility identity on FreeBSD.
+
+** Usage
+#+begin_src sh
+  # These alters ELF binary header and mark them
+  # as 32-bit and 64-bit binary respectively. Under
+  # GNU/Linux, these binaries will run just fine,
+  # however a strict interpreter or future implementations
+  # may override this.
+  markelf <file> -c
+  markelf <file> -cb
+
+  # Same as above, except this alters the ELF OS
+  # ABI. This feature is similar to brandelf.
+  markelf <file> -t linux
+  # or
+  markelf <file> -t 3
+#+end_src
